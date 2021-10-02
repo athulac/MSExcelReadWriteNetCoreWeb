@@ -1,0 +1,15 @@
+C:\Users\Athula\source\repos\PracticalTestExecl\PracticalTest.Domain\bin\Debug\net5.0\PracticalTest.Domain.deps.json
+C:\Users\Athula\source\repos\PracticalTestExecl\PracticalTest.Domain\bin\Debug\net5.0\PracticalTest.Domain.runtimeconfig.json
+C:\Users\Athula\source\repos\PracticalTestExecl\PracticalTest.Domain\bin\Debug\net5.0\PracticalTest.Domain.runtimeconfig.dev.json
+C:\Users\Athula\source\repos\PracticalTestExecl\PracticalTest.Domain\bin\Debug\net5.0\PracticalTest.Domain.dll
+C:\Users\Athula\source\repos\PracticalTestExecl\PracticalTest.Domain\bin\Debug\net5.0\ref\PracticalTest.Domain.dll
+C:\Users\Athula\source\repos\PracticalTestExecl\PracticalTest.Domain\bin\Debug\net5.0\PracticalTest.Domain.pdb
+C:\Users\Athula\source\repos\PracticalTestExecl\PracticalTest.Domain\obj\Debug\net5.0\PracticalTest.Domain.csprojAssemblyReference.cache
+C:\Users\Athula\source\repos\PracticalTestExecl\PracticalTest.Domain\obj\Debug\net5.0\PracticalTest.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Athula\source\repos\PracticalTestExecl\PracticalTest.Domain\obj\Debug\net5.0\PracticalTest.Domain.AssemblyInfoInputs.cache
+C:\Users\Athula\source\repos\PracticalTestExecl\PracticalTest.Domain\obj\Debug\net5.0\PracticalTest.Domain.AssemblyInfo.cs
+C:\Users\Athula\source\repos\PracticalTestExecl\PracticalTest.Domain\obj\Debug\net5.0\PracticalTest.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Athula\source\repos\PracticalTestExecl\PracticalTest.Domain\obj\Debug\net5.0\PracticalTest.Domain.dll
+C:\Users\Athula\source\repos\PracticalTestExecl\PracticalTest.Domain\obj\Debug\net5.0\ref\PracticalTest.Domain.dll
+C:\Users\Athula\source\repos\PracticalTestExecl\PracticalTest.Domain\obj\Debug\net5.0\PracticalTest.Domain.pdb
+C:\Users\Athula\source\repos\PracticalTestExecl\PracticalTest.Domain\obj\Debug\net5.0\PracticalTest.Domain.genruntimeconfig.cache

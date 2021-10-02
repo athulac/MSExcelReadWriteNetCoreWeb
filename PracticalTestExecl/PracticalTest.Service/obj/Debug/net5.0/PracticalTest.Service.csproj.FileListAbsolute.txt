@@ -1,0 +1,17 @@
+C:\Users\Athula\source\repos\PracticalTestExecl\PracticalTest.Service\bin\Debug\net5.0\PracticalTest.Service.deps.json
+C:\Users\Athula\source\repos\PracticalTestExecl\PracticalTest.Service\bin\Debug\net5.0\PracticalTest.Service.dll
+C:\Users\Athula\source\repos\PracticalTestExecl\PracticalTest.Service\bin\Debug\net5.0\ref\PracticalTest.Service.dll
+C:\Users\Athula\source\repos\PracticalTestExecl\PracticalTest.Service\bin\Debug\net5.0\PracticalTest.Service.pdb
+C:\Users\Athula\source\repos\PracticalTestExecl\PracticalTest.Service\obj\Debug\net5.0\PracticalTest.Service.csprojAssemblyReference.cache
+C:\Users\Athula\source\repos\PracticalTestExecl\PracticalTest.Service\obj\Debug\net5.0\PracticalTest.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Athula\source\repos\PracticalTestExecl\PracticalTest.Service\obj\Debug\net5.0\PracticalTest.Service.AssemblyInfoInputs.cache
+C:\Users\Athula\source\repos\PracticalTestExecl\PracticalTest.Service\obj\Debug\net5.0\PracticalTest.Service.AssemblyInfo.cs
+C:\Users\Athula\source\repos\PracticalTestExecl\PracticalTest.Service\obj\Debug\net5.0\PracticalTest.Service.csproj.CoreCompileInputs.cache
+C:\Users\Athula\source\repos\PracticalTestExecl\PracticalTest.Service\obj\Debug\net5.0\PracticalTest.Service.dll
+C:\Users\Athula\source\repos\PracticalTestExecl\PracticalTest.Service\obj\Debug\net5.0\ref\PracticalTest.Service.dll
+C:\Users\Athula\source\repos\PracticalTestExecl\PracticalTest.Service\obj\Debug\net5.0\PracticalTest.Service.pdb
+C:\Users\Athula\source\repos\PracticalTestExecl\PracticalTest.Service\bin\Debug\net5.0\PracticalTest.Domain.dll
+C:\Users\Athula\source\repos\PracticalTestExecl\PracticalTest.Service\bin\Debug\net5.0\PracticalTest.Repositoy.dll
+C:\Users\Athula\source\repos\PracticalTestExecl\PracticalTest.Service\bin\Debug\net5.0\PracticalTest.Domain.pdb
+C:\Users\Athula\source\repos\PracticalTestExecl\PracticalTest.Service\bin\Debug\net5.0\PracticalTest.Repositoy.pdb
+C:\Users\Athula\source\repos\PracticalTestExecl\PracticalTest.Service\obj\Debug\net5.0\PracticalTest.Service.csproj.CopyComplete

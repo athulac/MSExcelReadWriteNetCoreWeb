@@ -1,0 +1,462 @@
+﻿
+@{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+
+<div id="app">
+  
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Personal Information
+                    </button>
+                </h5>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">First Name</label>
+                            <input v-model="inputModel.firstName" type="text" class="form-control" id="" placeholder="First Name">
+                            <span class="text-danger">{{this.errors?.find(x => x.key == "firstName")?.value}}</span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Last Name</label>
+                            <input v-model="inputModel.lastName" type="text" class="form-control" id="" placeholder="Last Name">
+                            <span class="text-danger">{{this.errors?.find(x => x.key == "lastName")?.value}}</span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Date of Birth</label>
+                            <input v-model="inputModel.dob" class="form-control" type="date" id="birthday" name="birthday">
+                            <span class="text-danger">{{this.errors?.find(x => x.key == "dob")?.value}}</span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Gender</label>
+                            <select v-model="inputModel.gender" class="form-control">
+                                <option disabled selected value="0">Please select</option>
+                                <option value="1">Male</option>
+                                <option value="2">Female</option>
+                            </select>
+                            <span class="text-danger">{{this.errors?.find(x => x.key == "gender")?.value}}</span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Email</label>
+                            <input v-model="inputModel.email" type="email" class="form-control" id="" placeholder="Email">
+                            <span class="text-danger">{{this.errors?.find(x => x.key == "email")?.value}}</span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="">Status</label>
+                            <select v-model="inputModel.statusId" class="form-control">
+                                <option disabled selected value="0">Please select</option>
+                                <option v-for="item in statusList" v-bind:value="item.id">{{item.name}}</option>
+                            </select>
+                            <span class="text-danger">{{this.errors?.find(x => x.key == "statusId")?.value}}</span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Exclusion</label>
+                            <input v-model="inputModel.exclusion" type="text" class="form-control" id="" placeholder="Exclusion">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="">Ethnicity</label>
+                            <select v-model="inputModel.ethnicityId" class="form-control">
+                                <option disabled selected value="0">Please select</option>
+                                <option v-for="item in ethnicityList" v-bind:value="item.id">{{item.name}}</option>
+                            </select>
+                            <span class="text-danger">{{this.errors?.find(x => x.key == "ethnicityId")?.value}}</span>
+                        </div>
+                    </div>
+                    <h6>Hs Information</h6>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">City</label>
+                            <select v-model="inputModel.city" class="form-control">
+                                <option disabled selected value="">Please select</option>
+                                <option v-for="item in cityList" v-bind:value="item">{{item}}</option>
+                            </select>
+                            <span class="text-danger">{{this.errors?.find(x => x.key == "city")?.value}}</span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">State</label>
+                            <select v-model="inputModel.state" class="form-control">
+                                <option disabled selected value="">Please select</option>
+                                <option v-for="item in stateList" v-bind:value="item">{{item}}</option>
+                            </select>
+                            <span class="text-danger">{{this.errors?.find(x => x.key == "state")?.value}}</span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Zip</label>
+                            <input v-model="inputModel.zip" type="number" class="form-control" id="" placeholder="Zip">
+                            <span class="text-danger">{{this.errors?.find(x => x.key == "zip")?.value}}</span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">GPA</label>
+                            <input v-model="inputModel.gpa" type="text" class="form-control" id="" placeholder="GPA">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>       
+        <div class="card">
+            <div class="card-header" id="headingFour">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Sat Information
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                <div class="card-body">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Combined</label>
+                            <input v-model="inputModel.sat.combined??null" type="number" class="form-control" id="" placeholder="Combined">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Math</label>
+                            <input v-model="inputModel.sat.math" type="number" class="form-control" id="" placeholder="Math">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Verbal</label>
+                            <input v-model="inputModel.sat.verbal" type="number" class="form-control" id="" placeholder="Verbal">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Reading</label>
+                            <input v-model="inputModel.sat.reading" type="number" class="form-control" id="" placeholder="Reading">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingFive">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Act Information
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                <div class="card-body">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Composite</label>
+                            <input v-model="inputModel.act.composite" type="number" class="form-control" id="" placeholder="Composite">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Math</label>
+                            <input v-model="inputModel.act.math" type="number" class="form-control" id="" placeholder="Math">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">English</label>
+                            <input v-model="inputModel.act.english" type="number" class="form-control" id="" placeholder="English">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Reading</label>
+                            <input v-model="inputModel.act.reading" type="number" class="form-control" id="" placeholder="Reading">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingSix">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                        Acadamic Information
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+                <div class="card-body">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Period</label>
+                            <select v-model="inputModel.acadamic.period" class="form-control">
+                                <option disabled selected value="">Please select</option>
+                                <option v-for="item in periodList" v-bind:value="item">{{item}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Entry Age</label>
+                            <input v-model="inputModel.acadamic.entryAge" type="text" class="form-control" id="" placeholder="Entry Age">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Ged</label>
+                            <select v-model="inputModel.acadamic.ged" class="form-control">
+                                <option disabled selected value="0">Please select</option>
+                                <option v-for="item in gedList" v-bind:value="item.value">{{item.text}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">English Second Language</label>
+                            <select v-model="inputModel.acadamic.englishSecondLang" class="form-control">
+                                <option disabled selected value="0">Please select</option>
+                                <option v-for="item in engList" v-bind:value="item.value">{{item.text}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">First Generation</label>
+                            <select v-model="inputModel.acadamic.firsGeneration" class="form-control">
+                                <option disabled selected value="0">Please select</option>
+                                <option v-for="item in genList" v-bind:value="item.value">{{item.text}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid pb-3 pt-3">
+        <button v-on:click="Save" type="button" class="btn btn-primary">Save</button>
+        <button type="button" class="ml-3 btn btn-warning">Clear</button>
+    </div>
+
+</div>
+
+@section Scripts
+{
+
+
+    <script>
+        $('#datepicker').datepicker({
+            uiLibrary: 'bootstrap'
+        });
+     
+
+        var vueApp = new Vue({
+            el: '#app',
+            data: {
+                inputModel: {
+                    firstName: '',
+                    lastName: '',
+                    dob: '',
+                    gender: 0,
+                    email: '',
+                    statusId: 0,
+                    exclusion: '',
+                    ethnicityId: 0,
+
+                    city: '',
+                    state: '',
+                    zip: 0,
+                    gpa: 0.0,
+
+                    sat: {
+                        combined: 0,
+                        math: 0,
+                        verbal: 0,
+                        reading: 0,
+                    },
+                    act: {
+                        composite: 0,
+                        math: 0,
+                        english: 0,
+                        reading: 0,
+                    },
+                    acadamic: {
+                        period: '',
+                        entryAge: 0.0,
+                        ged: 0,
+                        englishSecondLang: 0,
+                        firsGeneration: 0,
+                    },
+                    
+                },
+                statusList: [],
+                ethnicityList: [],
+                cityList: [],
+                stateList: [],
+                periodList: [],
+                gedList: [],
+                engList: [],
+                genList: [],
+
+                errors: [],
+            },
+            mounted: function (event) {
+                this.GetAllStatus();
+                this.GetAllEthnicity();
+                this.stateList = ['Albuquerque', 'New York', 'Pheonix', 'Seattle', 'Denver', 'Austin'];
+                this.cityList = ['New Mexico', 'New York', 'Arizona', 'Washington', 'Colorado', 'Texas'];
+                this.periodList = ['Fall 2008', 'Fall 2007', 'Fall 2008', 'Fall 2010'];
+                this.gedList = [{ text: 'True', value: 1 }, { text: 'False', value: 2 }];
+                this.engList = [{ text: 'True', value: 1 }, { text: 'False', value: 2 }];
+                this.genList = [{ text: 'True', value: 1 }, { text: 'False', value: 2 }];
+            },
+            methods: {
+                Validate: function () {
+                    this.errors = [];
+                    var ret = true;
+                    if (this.inputModel.firstName === "") {
+                        this.errors.push({ key: 'firstName', value: 'Please enter first name' })
+                        ret = false;
+                    }
+                    if (this.inputModel.lastName === "") {
+                        this.errors.push({ key: 'lastName', value: 'Please enter last name' })
+                        ret = false;
+                    }                
+                    if (this.inputModel.dob === "") {
+                        this.errors.push({ key: 'dob', value: 'Please enter first name' })
+                        ret = false;
+                    }
+                    if (this.inputModel.email === "") {
+                        this.errors.push({ key: 'email', value: 'Please enter email' })
+                        ret = false;
+                    }
+                    if (this.inputModel.statusId === 0) {
+                        this.errors.push({ key: 'statusId', value: 'Please enter status' })
+                        ret = false;
+                    }
+                    if (this.inputModel.ethnicityId === 0) {
+                        this.errors.push({ key: 'ethnicityId', value: 'Please enter ethnicity' })
+                        ret = false;
+                    }
+                    if (this.inputModel.city === "") {
+                        this.errors.push({ key: 'city', value: 'Please enter city' })
+                        ret = false;
+                    }
+                    if (this.inputModel.state === "") {
+                        this.errors.push({ key: 'state', value: 'Please enter state' })
+                        ret = false;
+                    }                    
+                    if (this.inputModel.zip === 0) {
+                        this.errors.push({ key: 'zip', value: 'Please enter zip' })
+                        ret = false;
+                    }        
+
+                    return ret;
+
+                },
+                ResetInput() {
+                    this.markInputModel.gradeId = 0;
+                    this.markInputModel.studentId = 0;
+                    this.markInputModel.subjectId = 0;
+                    this.markInputModel.teacherId = 0;
+                    this.markInputModel.marks = 0;
+                    this.markInputModel.teacherSubjectId = 0;
+                },
+                GetAllStatus: function () {
+                    axios.get('/Status/GetAll')
+                        .then((response) => {
+                            this.statusList = response;
+                        });
+                },
+                GetAllEthnicity: function () {
+                    axios.get('/Ethnicity/GetAll')
+                        .then((response) => {
+                            this.ethnicityList = response;
+                        });
+                },
+
+
+
+
+                GetTeachersBySubject: function () {
+                    this.teacherSubjectId =
+
+                        axios.get('/Subject/GetTeachBySubjectId', {
+                            params: { subjectId: this.markInputModel.subjectId }
+                        })
+                            .then((response) => {
+                                this.teachers = response;
+                            });
+                },
+
+                GetSubjects: function () {
+                    axios.get('/Subject/GetAll')
+                        .then((response) => {
+                            this.subjects = response;
+                        });
+                },
+
+                GetStudents: function () {
+                    axios.get('/Student/GetByGrade', {
+                        params: { gradeId: this.markInputModel.gradeId }
+                    })
+                        .then((response) => {
+                            this.students = response;
+                        });
+                },
+
+            
+
+                GetAll: function () {
+                    axios.get('/Mark/GetMarks')
+                        .then((response) => {
+                            var data = [];
+                            $.each(response, function (index, value) {
+                                var obj = {
+                                    "school": value.student.school.name,
+                                    "address": value.student.school.address,
+                                    "student": value.student.name,
+                                    "dob": value.student.dob,
+                                    "grade": value.student.grade.name,
+                                    "subject": value.teacherSubject.subject.name,
+                                    "marks": value.marks,
+                                    "teacher": value.teacherSubject.teacher.name
+                                };
+                                data.push(obj);
+                            });
+
+                            $('#example').dataTable().fnClearTable();
+                            $('#example').dataTable().fnDestroy();
+                            $('#example').DataTable({
+                                data: data,
+                                columns: [
+                                    { "data": "school" },
+                                    { "data": "address" },
+                                    { "data": "student" },
+                                    { "data": "dob" },
+                                    { "data": "grade" },
+                                    { "data": "subject" },
+                                    { "data": "marks" },
+                                    { "data": "teacher" },
+                                ],
+                                pageLength: 6,
+                                lengthMenu: [[6, 12, -1], [6, 12, 'All']]
+                            });
+                        });
+                },
+
+
+                Save: function () {
+                    if (this.Validate()) {
+                        const data = this.inputModel;
+                        axios.post("/Student/Save", data)
+                            .then(response => {
+                                //this.GetAll();
+                                //this.ResetInput();
+                            });
+                    }                    
+                },
+            }
+        })
+    </script>
+
+}
+

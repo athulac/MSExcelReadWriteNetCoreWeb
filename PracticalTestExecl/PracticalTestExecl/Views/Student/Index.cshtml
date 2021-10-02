@@ -1,0 +1,87 @@
+﻿@{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+
+<div class="col-12">
+    <table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Dob</th>
+                <th>Ethnicity</th>
+                <th>Gender</th>
+                <th>Email</th>
+                <th>City</th>                
+                <th>Action</th>                
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+
+@section Scripts
+{
+
+
+    <script>     
+
+        var vueApp = new Vue({
+            el: '#app',
+            data: {
+               
+            },
+            mounted: function (event) {
+                this.GetAll();
+             
+            },
+            methods: {
+
+                GetAll: function () {
+                    axios.get('/Student/GetAll')
+                        .then((response) => {
+                            var data = [];
+                            $.each(response, function (index, value) {
+                                var obj = {
+                                    "firstName": value.firstName,
+                                    "lastName": value.lastName,
+                                    "dob": moment(value.dob, "YYYYMMDD").fromNow(),                                  
+                                    "ethnicity": value.ethnicity.name,
+                                    "gender": value.gender,
+                                    "email": value.email,
+                                    "city": value.city,
+                                    "action": "<a>Edit</a>",
+                                };
+                                data.push(obj);
+                            });
+
+                            $('#example').dataTable().fnClearTable();
+                            $('#example').dataTable().fnDestroy();
+                            $('#example').DataTable({
+                                data: data,
+                                columns: [
+                                    { "data": "firstName" },
+                                    { "data": "lastName" },
+                                    { "data": "dob" },
+                                    { "data": "ethnicity" },
+                                    { "data": "gender" },
+                                    { "data": "email" },
+                                    { "data": "city" },  
+                                    { "data": "action" },     
+                                ],
+                                pageLength: 6,
+                                lengthMenu: [[6, 12, -1], [6, 12, 'All']]
+                            });
+                        });
+                },
+            }
+        })
+    </script>
+
+}
+
+
+
+
